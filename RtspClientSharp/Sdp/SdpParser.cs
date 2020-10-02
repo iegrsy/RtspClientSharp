@@ -328,6 +328,9 @@ namespace RtspClientSharp.Sdp
                 case 105:
                     codecInfo = new H264CodecInfo();
                     break;
+                case 107:
+                    codecInfo = new MetaDataCodecInfo();
+                    break;
             }
 
             return codecInfo;
@@ -340,6 +343,9 @@ namespace RtspClientSharp.Sdp
 
             if (codecName == "H264")
                 return new H264CodecInfo();
+
+            if (codecName == "VND.ONVIF.METADATA")
+                return new MetaDataCodecInfo();
 
             bool isPcmu = codecName == "PCMU";
             bool isPcma = codecName == "PCMA";
